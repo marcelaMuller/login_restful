@@ -89,6 +89,7 @@
 		<tr><td>Nombre: </td><td><input type="text" id="nombre" name="nombre" value=""></td></tr>
 		<tr><td>E-mail: </td><td><input type="text" id="email" name="email" value=""></td></tr>
 		<tr><td>Clave: </td><td><input type="password" id="password" name="password" value=""></td></tr>
+		<tr><td>Clave: </td><td><input type="date" id="fRegistro" name="fRegistro" value=""></td></tr>
 		
 	</table></center></br>
 		<center><input id="crear_boton" type="button" value="CREAR"/></center>

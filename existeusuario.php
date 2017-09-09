@@ -5,7 +5,7 @@ $postData = array(
   'pwd' =>'1234'  
   );  
   $ch = curl_init();  
-  curl_setopt($ch, CURLOPT_URL, "http://localhost/login_restful/login");  
+  curl_setopt($ch, CURLOPT_URL, "http://localhost/login_restful/login_restful/login");  
   curl_setopt($ch, CURLOPT_HEADER, false);  
   curl_setopt($ch, CURLOPT_POST, true);  
   //http_build_query => Generar una cadena de consulta codificada estilo URL a partir de array  

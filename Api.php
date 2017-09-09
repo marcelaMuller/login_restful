@@ -173,17 +173,19 @@
      if ($_SERVER['REQUEST_METHOD'] != "POST") {  
        $this->mostrarRespuesta($this->convertirJson($this->devolverError(1)), 405);  
      }  
-     if (isset($this->datosPeticion['nombre'], $this->datosPeticion['email'], $this->datosPeticion['pwd'])) {  
+     if (isset($this->datosPeticion['nombre'], $this->datosPeticion['email'], $this->datosPeticion['pwd'],$this->datosPeticion['fRegistro'])) {  
        $nombre = $this->datosPeticion['nombre'];  
        $pwd = $this->datosPeticion['pwd'];  
        $email = $this->datosPeticion['email'];  
-       // echo $nombre."\n".$pwd."\n".$email;
+       echo $nombre."\n".$pwd."\n".$email;
+       $fRegistro=$this->datosPeticion['fRegistro'];
        if (!$this->existeUsuario($email)) {  
          //$query = $this->_conn->prepare("INSERT into usuario (nombre,email,password,fRegistro) VALUES (:nombre, :email, :pwd, NOW())");  
-         $query = $this->_conn->prepare("INSERT into usuario (nombre,email,password,fRegistro) VALUES ('".$nombre."', '".$email."', '".$pwd."', '".DATE("Y-m-d")."')");  
+         $query = $this->_conn->prepare("INSERT into usuario (nombre,email,password,fRegistro) VALUES ('".$nombre."', '".$email."', '".$pwd."', '".$fRegistro."')");  
          $query->bindValue(":nombre", $nombre);  
          $query->bindValue(":email", $email);  
          $query->bindValue(":pwd", sha1($pwd));
+         $query->bindValue(":fRegistro", $fRegistro);
          $query->execute();  
          print_r($query);
          echo "-->>".count($query)."<<---";

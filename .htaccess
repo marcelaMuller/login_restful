@@ -1,5 +1,5 @@
 RewriteEngine on
-RewriteBase /login_restful/
+RewriteBase /login_restful/login_restful/
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
